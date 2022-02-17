@@ -1,0 +1,1 @@
+# mint_recommended_config
