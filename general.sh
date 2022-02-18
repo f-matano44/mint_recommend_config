@@ -20,9 +20,7 @@ sudo apt remove -y hypnotix # テレビ番組視聴アプリだけど日本じ�
 sudo apt install -y software-properties-common
 
 # アンチウイルスソフト
-flatpak install -y flathub com.gitlab.davem.ClamTk
-# フォントがぶっ壊れているので修復 (参考: https://p--q.blogspot.com/2020/09/flatpakgnucash.html )
-flatpak run --command=fc-cache com.gitlab.davem.ClamTk -f -v
+sudo apt install clamtk
 
 # office ソフトの最新化
 sudo apt remove -y libreoffice* # 旧バージョンの削除
