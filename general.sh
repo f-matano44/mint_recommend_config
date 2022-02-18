@@ -33,8 +33,7 @@ sudo apt remove -y celluloid mpv
 flatpak install -y flathub org.videolan.VLC
 
 # steam（ゲームクライアント）
-flatpak install -y flathub com.valvesoftware.Steam
-sudo apt install --no-install-recommends steam-devices
+sudo apt install steam steam-devices
 
 # minecraft（超有名ゲームですよね！）
 flatpak install -y flathub com.mojang.Minecraft
