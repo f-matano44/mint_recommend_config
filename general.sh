@@ -3,8 +3,8 @@
 # ディレクトリ名を日本語から英語に
 LANG=C xdg-user-dirs-gtk-update
 
-# ubuntu 日本語環境のインストール: Ubuntu Japanese Team より-----------
-# 最終閲覧 2022-01-28 https://www.ubuntulinux.jp/products/JA-Localized#repository
+# Ubuntu Japanese Team "Ubuntuの日本語環境" より (最終閲覧日: 2022-03-17)-----------
+# https://www.ubuntulinux.jp/products/JA-Localized#repository
 wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | sudo apt-key add -
 wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-key add -
 sudo wget https://www.ubuntulinux.jp/sources.list.d/focal.list -O /etc/apt/sources.list.d/ubuntu-ja.list
@@ -20,20 +20,18 @@ sudo apt remove -y hypnotix # テレビ番組視聴アプリだけど日本じ�
 sudo apt install -y software-properties-common
 
 # アンチウイルスソフト
-sudo apt install clamtk
+flatpak install -y flathub com.gitlab.davem.ClamTk
 
 # office ソフトの最新化
 sudo apt remove -y libreoffice* # 旧バージョンの削除
 flatpak install -y flathub org.libreoffice.LibreOffice # 最新バージョンのインストール
-# フォントがぶっ壊れているので修復 (参考: https://p--q.blogspot.com/2020/09/flatpakgnucash.html )
-flatpak run --command=fc-cache org.libreoffice.LibreOffice -f -v
 
 # 動画プレイヤーの入れ替え（celluloid, mpv -> VLC）
 sudo apt remove -y celluloid mpv
 flatpak install -y flathub org.videolan.VLC
 
 # steam（ゲームクライアント）
-sudo apt install steam steam-devices
+sudo apt install -y steam steam-devices
 
 # minecraft（超有名ゲームですよね！）
 flatpak install -y flathub com.mojang.Minecraft
@@ -49,8 +47,8 @@ sudo apt install -y numlockx # テンキーを自動で有効にしてくれる
 sudo apt install -y neofetch # PC の情報を terminal 上で表示
 sudo apt install -y cpu-x # PC の情報を GUI 上で表示
 
-# wine (Windows のエミュレータ) のインストール: Wine HQ Wiki より------
-# 最終閲覧 2022-01-28 https://wiki.winehq.org/Ubuntu
+# Wine HQ Wiki "Installing WineHQ packages" より (最終閲覧日: 2022-03-17)------
+# https://wiki.winehq.org/Ubuntu
 sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
