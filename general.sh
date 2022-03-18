@@ -25,16 +25,20 @@ flatpak install -y flathub com.gitlab.davem.ClamTk
 # office ソフトの最新化
 sudo apt remove -y libreoffice* # 旧バージョンの削除
 flatpak install -y flathub org.libreoffice.LibreOffice # 最新バージョンのインストール
+# フォントがぶっ壊れているので修復 (参考: https://p--q.blogspot.com/2020/09/flatpakgnucash.html )
+flatpak run --command=fc-cache org.libreoffice.LibreOffice -f -v
 
 # 動画プレイヤーの入れ替え（celluloid, mpv -> VLC）
 sudo apt remove -y celluloid mpv
 flatpak install -y flathub org.videolan.VLC
+flatpak run --command=fc-cache org.videolan.VLC -f -v
 
 # steam（ゲームクライアント）
 sudo apt install -y steam steam-devices
 
 # minecraft（超有名ゲームですよね！）
 flatpak install -y flathub com.mojang.Minecraft
+flatpak run --command=fc-cache com.mojang.Minecraft -f -v
 
 # Lutris（ゲーム管理ソフト）のインストール
 sudo add-apt-repository -y ppa:lutris-team/lutris
